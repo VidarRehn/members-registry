@@ -1,0 +1,31 @@
+
+<%- include('header') %>
+
+<div class="register-bg">
+    <div class="overlay"></div>
+</div>
+
+<div class="container">
+    <h1>Register new members</h1>
+    <form action="/register" method="post" class="register-form">
+        <div>
+            <label for="name">Full Name</label>
+            <input type="text" name="name" id="name" placeholder="John Doe" required>
+        </div>
+        <div>
+            <label for="email">E-mail address</label>
+            <input type="email" name="email" id="email" placeholder="john.doe@email.com" required>
+        </div>
+        <div>
+            <label for="phone">Telephone number</label>
+            <input type="tel" name="phone" id="phone" placeholder="+XX (0) XXX XX XX" required>
+        </div>
+        <div>
+            <label for="favoriteMoment">Favorite Arsenal moment</label>
+            <textarea name="favoriteMoment" id="favoriteMoment" cols="30" rows="3" placeholder="Please write about your favorite Arsenal moment here"></textarea>
+        </div>
+        <button>Add member</button>
+    </form>
+</div>
+
+<%- include('footer') %>

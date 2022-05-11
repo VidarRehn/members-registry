@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // outline: 1px solid yellow;
+    // font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    color: #e2e2e2;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgb(232, 232, 232);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    header {
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        top: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+                transition: linear .2s;
+
+                &:hover {
+                    color: #CB1F1F;
+                }
+            }
+
+            div {
+
+                a:first-of-type {
+                    margin-right: 30px;
+                }
+            }
+        }
+    }
+
+    footer {
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        bottom: 0;
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            font-size: 10px;
+        }
+
+        div {
+            text-align: center;
+        }
+    }
+}
+
+.home-bg, .members-bg, .member-bg, .register-bg {
+    z-index: -10;
+    position: absolute;
+    min-height: 100vh;
+    width: 100vw;
+    background: no-repeat center fixed; 
+    
+
+    .overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(#1c1c1c80, #1c1c1c 80%);
+    }
+}
+
+.home-bg {
+    background-image: url('/images/home.webp'); 
+    background-position: top;
+}
+
+.members-bg {
+    background-image: url('/images/members.jpg'); 
+    background-position: center -200px;
+}
+
+.member-bg {
+    background-image: url('/images/member.jfif'); 
+    background-position: center -100px;
+}
+
+.register-bg {
+    background-image: url('/images/register.jpg'); 
+    background-position: center -100px;
+}
+
+.container {
+    margin: 0px 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        margin-bottom: 40px;
+    }
+
+    .buttons {
+        margin-top: 60px;
+
+        button {
+            height: 45px;
+            width: 160px;
+            border: 5px solid #CB1F1F;
+            cursor: pointer;
+            transition: linear .2s;
+        }
+
+        .members-btn {
+            background-color: #CB1F1F;
+            margin-right: 20px;
+
+            &:hover {
+                background-color: #8e1111;
+            }
+        }
+
+        .register-btn {
+            background-color: #1c1c1c;
+
+            &:hover {
+                background-color: #303030;
+            }
+        }
+    }
+
+    .member-info {
+        display: flex;
+        flex-direction: column;
+        
+        >* {
+            margin-top: 10px;
+        }
+
+        .date {
+            margin-top: -30px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .edit-btn {
+        margin-top: 30px;
+        height: 45px;
+        width: 160px;
+        border: 5px solid #CB1F1F;
+        cursor: pointer;
+        transition: linear .2s;
+        background-color: #1c1c1c;
+
+        &:hover {
+            background-color: #303030;
+        }
+    }
+
+    .edit-form {
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        div {
+            width: 100%;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+
+            label {
+                text-align: left;
+                margin-bottom: 5px;
+            }
+            
+            input, textarea {
+                background-color: #1c1c1c;
+                border: 3px solid #e2e2e2;
+                padding: 10px;
+            }
+        }
+
+        .save-edit-btn {
+            margin-top: 30px;
+            height: 45px;
+            width: 160px;
+            border: 5px solid #CB1F1F;
+            cursor: pointer;
+            transition: linear .2s;
+            background-color: #CB1F1F;
+    
+            &:hover {
+                background-color: #8e1111;
+            }
+        }
+    }
+
+    .remove-btn {
+        cursor: pointer;
+        margin-top: 10px;
+        border: none;
+        background-color: transparent;
+        color: #CB1F1F;
+        text-decoration: underline;
+
+        &:hover {
+            color: #8e1111;
+        }
+    }
+
+    .members-list {
+        max-height: 300px;
+        overflow-y: scroll;
+        position: relative;
+
+        &::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        li {
+            width: 600px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            padding: 10px 20px;
+            list-style-type: none;
+            background-color: #1c1c1c;
+            border: 2px solid #CB1F1F;
+
+            .name {
+                flex-basis: 50%;
+            }
+
+            .member-since {
+                flex-basis: 30%;
+            }
+
+            .link {
+                flex-basis: 20%;
+
+                &:hover {
+                    color: #CB1F1F;
+                }
+            }
+        }
+
+        .list-header {
+            margin-top: 0;
+            background-color: #CB1F1F;
+            position: sticky;
+            top: 0;
+
+            div {
+                display: flex;
+
+                i {
+                    margin-left: 10px;
+
+                    &:hover {
+                        color: #8e1111;
+                    }
+                }
+            }
+        }
+    }
+
+    .register-form {
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        div {
+            width: 100%;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+
+            label {
+                text-align: left;
+                margin-bottom: 5px;
+            }
+            
+            input, textarea {
+                background-color: #1c1c1c;
+                border: 3px solid #e2e2e2;
+                padding: 10px;
+            }
+        }
+
+        button {
+            margin-top: 40px;
+            height: 45px;
+            width: 160px;
+            border: 5px solid #CB1F1F;
+            background-color: #CB1F1F;
+            cursor: pointer;
+            transition: linear .2s;
+
+            &:hover {
+                background-color: #8e1111;
+            }
+        }
+    }
+}
+
+.hide {
+    display: none !important;
+}

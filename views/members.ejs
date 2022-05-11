@@ -1,0 +1,39 @@
+
+<%- include('header') %>
+
+<div class="members-bg">
+    <div class="overlay"></div>
+</div>
+
+<div class="container">
+    <h1>Members List</h1>
+    <ul class="members-list">
+        <li class="list-header">
+            <div class="name">
+                <p>Name</p>
+                <i class="fa-solid fa-arrow-down-a-z" onclick="location = '/members/ascending'"></i>
+                <i class="fa-solid fa-arrow-down-z-a" onclick="location = '/members/descending'"></i>
+                <i class="fa-solid fa-sort" onclick="location = '/members'"></i>
+            </div>
+            <p class="member-since">Member since</p>
+            <div class="link"></div>
+        </li>
+        <% members.forEach(member => { %>
+            <% let date = member.memberSince %>
+            <% let day = date.getDate() %>
+            <% let month = date.toLocaleString('default', {month: 'long'}) %>
+            <% let year = date.getFullYear() %>
+            <li>
+                <p class="name"><%= member.name %></p>
+                <p class="member-since"><%= `${day} ${month}, ${year}` %></p>
+                <a href="/member/<%= member._id %>" class="link">See more</a>
+            </li>
+        <% }) %>
+    </ul>
+</div>
+
+<script src="/main.js"></script>
+
+
+
+<%- include('footer') %>

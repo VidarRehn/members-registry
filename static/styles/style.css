@@ -1,0 +1,400 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: #e2e2e2;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #e8e8e8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header {
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header nav a {
+  text-decoration: none;
+  -webkit-transition: linear .2s;
+  transition: linear .2s;
+}
+
+body header nav a:hover {
+  color: #CB1F1F;
+}
+
+body header nav div a:first-of-type {
+  margin-right: 30px;
+}
+
+body footer {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body footer p {
+  font-size: 10px;
+}
+
+body footer div {
+  text-align: center;
+}
+
+.home-bg, .members-bg, .member-bg, .register-bg {
+  z-index: -10;
+  position: absolute;
+  min-height: 100vh;
+  width: 100vw;
+  background: no-repeat center fixed;
+}
+
+.home-bg .overlay, .members-bg .overlay, .member-bg .overlay, .register-bg .overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1c1c1c80), color-stop(80%, #1c1c1c));
+  background: linear-gradient(#1c1c1c80, #1c1c1c 80%);
+}
+
+.home-bg {
+  background-image: url("/images/home.webp");
+  background-position: top;
+}
+
+.members-bg {
+  background-image: url("/images/members.jpg");
+  background-position: center -200px;
+}
+
+.member-bg {
+  background-image: url("/images/member.jfif");
+  background-position: center -100px;
+}
+
+.register-bg {
+  background-image: url("/images/register.jpg");
+  background-position: center -100px;
+}
+
+.container {
+  margin: 0px 100px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container h1 {
+  margin-bottom: 40px;
+}
+
+.container .buttons {
+  margin-top: 60px;
+}
+
+.container .buttons button {
+  height: 45px;
+  width: 160px;
+  border: 5px solid #CB1F1F;
+  cursor: pointer;
+  -webkit-transition: linear .2s;
+  transition: linear .2s;
+}
+
+.container .buttons .members-btn {
+  background-color: #CB1F1F;
+  margin-right: 20px;
+}
+
+.container .buttons .members-btn:hover {
+  background-color: #8e1111;
+}
+
+.container .buttons .register-btn {
+  background-color: #1c1c1c;
+}
+
+.container .buttons .register-btn:hover {
+  background-color: #303030;
+}
+
+.container .member-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .member-info > * {
+  margin-top: 10px;
+}
+
+.container .member-info .date {
+  margin-top: -30px;
+  margin-bottom: 30px;
+}
+
+.container .edit-btn {
+  margin-top: 30px;
+  height: 45px;
+  width: 160px;
+  border: 5px solid #CB1F1F;
+  cursor: pointer;
+  -webkit-transition: linear .2s;
+  transition: linear .2s;
+  background-color: #1c1c1c;
+}
+
+.container .edit-btn:hover {
+  background-color: #303030;
+}
+
+.container .edit-form {
+  width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .edit-form div {
+  width: 100%;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .edit-form div label {
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.container .edit-form div input, .container .edit-form div textarea {
+  background-color: #1c1c1c;
+  border: 3px solid #e2e2e2;
+  padding: 10px;
+}
+
+.container .edit-form .save-edit-btn {
+  margin-top: 30px;
+  height: 45px;
+  width: 160px;
+  border: 5px solid #CB1F1F;
+  cursor: pointer;
+  -webkit-transition: linear .2s;
+  transition: linear .2s;
+  background-color: #CB1F1F;
+}
+
+.container .edit-form .save-edit-btn:hover {
+  background-color: #8e1111;
+}
+
+.container .remove-btn {
+  cursor: pointer;
+  margin-top: 10px;
+  border: none;
+  background-color: transparent;
+  color: #CB1F1F;
+  text-decoration: underline;
+}
+
+.container .remove-btn:hover {
+  color: #8e1111;
+}
+
+.container .members-list {
+  max-height: 300px;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.container .members-list::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.container .members-list li {
+  width: 600px;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+  padding: 10px 20px;
+  list-style-type: none;
+  background-color: #1c1c1c;
+  border: 2px solid #CB1F1F;
+}
+
+.container .members-list li .name {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+.container .members-list li .member-since {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+}
+
+.container .members-list li .link {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+}
+
+.container .members-list li .link:hover {
+  color: #CB1F1F;
+}
+
+.container .members-list .list-header {
+  margin-top: 0;
+  background-color: #CB1F1F;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.container .members-list .list-header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .members-list .list-header div i {
+  margin-left: 10px;
+}
+
+.container .members-list .list-header div i:hover {
+  color: #8e1111;
+}
+
+.container .register-form {
+  width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .register-form div {
+  width: 100%;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .register-form div label {
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.container .register-form div input, .container .register-form div textarea {
+  background-color: #1c1c1c;
+  border: 3px solid #e2e2e2;
+  padding: 10px;
+}
+
+.container .register-form button {
+  margin-top: 40px;
+  height: 45px;
+  width: 160px;
+  border: 5px solid #CB1F1F;
+  background-color: #CB1F1F;
+  cursor: pointer;
+  -webkit-transition: linear .2s;
+  transition: linear .2s;
+}
+
+.container .register-form button:hover {
+  background-color: #8e1111;
+}
+
+.hide {
+  display: none !important;
+}
+/*# sourceMappingURL=style.css.map */

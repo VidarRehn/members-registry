@@ -1,0 +1,49 @@
+
+<%- include('header') %>
+
+<div class="member-bg">
+    <div class="overlay"></div>
+</div>
+
+<div class="container">
+    <% let day = memberSince.getDate() %>
+    <% let month = memberSince.toLocaleString('default', {month: 'long'}) %>
+    <% let year = memberSince.getFullYear() %>
+    <div class="member-info">
+        <h1><%= name %></h1>
+        <p class="date"><%= `Member since: ${day} ${month}, ${year}` %></p>
+        <a href="mailto:<%= email %>" class="email"><%= email %></a>
+        <a href="tel:<%= phone %>" class="phone"><%= phone %></a>
+        <div>
+            <strong>Favorite Arsenal Moment</strong>
+            <p class="moment"><%= favoriteMoment %></p>
+        </div>
+    </div>
+    <button class="edit-btn" onclick="openEditor(this)">Edit information</button>
+    <form action="/update/<%= _id %>" method="post" class="edit-form hide">
+        <div>
+            <label for="name">Full Name</label>
+            <input type="text" name="name" id="name" value="<%= name %>" placeholder="John Doe">
+        </div>
+        <div>
+            <label for="email">E-mail address</label>
+            <input type="email" name="email" id="email" value="<%= email %>" placeholder="john.doe@email.com">
+        </div>
+        <div>
+            <label for="phone">Telephone number</label>
+            <input type="text" name="phone" id="phone" value="<%= phone %>" placeholder="+XX (0) XXX XX XX">
+        </div>
+        <div>
+            <label for="favoriteMoment">Favorite Arsenal moment</label>
+            <textarea name="favoriteMoment" id="favoriteMoment" cols="30" rows="3" placeholder="Please write about your favorite Arsenal moment here"><%= favoriteMoment %></textarea>
+        </div>
+        <button class="save-edit-btn">Save</button>
+    </form>
+    <form action="/delete/<%= _id %>" method="post">
+        <button class="remove-btn">Remove member</button>
+    </form>
+</div>
+
+<script src="/main.js"></script>
+
+<%- include('footer') %>
